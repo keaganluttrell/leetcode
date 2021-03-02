@@ -28,7 +28,6 @@ var thirdMax = function(nums) {
     if (num > third && num < sec) {
       third = num;
     }
-    console.log(max, sec, third)
   }
   
   return third === Number.MIN_SAFE_INTEGER ? max : third;
