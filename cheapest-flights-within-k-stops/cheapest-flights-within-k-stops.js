@@ -14,7 +14,6 @@ var findCheapestPrice = function(n, flights, src, dst, k) {
        if (flightObj[from] == null) flightObj[from] = {};
        flightObj[from][to] = price;
    }
-    console.log(flightObj)
     const priorityQueue = [[0, 0, src]];
     
     while (priorityQueue.length) {
