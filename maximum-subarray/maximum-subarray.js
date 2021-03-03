@@ -1,18 +1,16 @@
 /**
- * @param {number[]} nums
- * @return {number}
+ * @param {number[]} nums ->  input
+ * @return {number} -> output
  */
 
-
-var maxSubArray = function(nums, current, max) {
-  if(!nums.length) return max;
-   const val = nums.pop();
-  if (current === undefined || max === undefined) {
-    current = val;
-    max = val;
-    return maxSubArray(nums, current, max);
+var maxSubArray = function(nums) {
+  let max = nums[0];
+  let curr = nums[0];
+  
+  for (let i = 1; i < nums.length; i++) {
+    curr = Math.max(curr + nums[i], nums[i]);
+    max = Math.max(curr, max);
   }
-  current = Math.max(current + val, val);
-  max = Math.max(current, max);
-  return maxSubArray(nums, current, max);
+  
+  return max
 };
